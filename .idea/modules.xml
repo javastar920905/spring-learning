@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/access-data-mysql.iml" filepath="$PROJECT_DIR$/.idea/modules/access-data-mysql.iml" group="access-data-mysql" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/access-data-mysql/access-data-mysql_main.iml" filepath="$PROJECT_DIR$/.idea/modules/access-data-mysql/access-data-mysql_main.iml" group="access-data-mysql" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/access-data-mysql/access-data-mysql_test.iml" filepath="$PROJECT_DIR$/.idea/modules/access-data-mysql/access-data-mysql_test.iml" group="access-data-mysql" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/restful-service.iml" filepath="$PROJECT_DIR$/.idea/modules/restful-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-learning.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-learning_main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-learning_main.iml" group="spring-learning" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-learning_test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-learning_test.iml" group="spring-learning" />
+    </modules>
+  </component>
+</project>
