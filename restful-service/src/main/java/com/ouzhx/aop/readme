@@ -1,0 +1,17 @@
+注解方式实现切面
+# 引入aop依赖
+
+# 1 创建切面类 标识为@Component 由spring IoC管理
+com.ouzhx.aspect.AnnotationAspect
+
+# 2 类同时标识为@Aspect
+
+# 3 声明 pointcut
+@Pointcut("execution(* com.ouzhx.service..*(..))")
+public void pointcutConfig() {}
+
+# 4 使用不同的注解实现 通知类型
+@Before(value = "pointcutConfig()")
+@After(value = "pointcutConfig()")
+@AfterReturning("pointcutConfig()")
+@AfterThrowing("pointcutConfig()")
