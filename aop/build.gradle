@@ -8,20 +8,16 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 jar {
-    baseName = 'rest-service'
-    version = '0.1.0'
+    baseName = 'aop'
+    version =  '0.1.0'
 }
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-aop")
-    compile("joda-time:joda-time:2.9.4")
-    compile("com.alibaba:fastjson:1.2.13")
-
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
