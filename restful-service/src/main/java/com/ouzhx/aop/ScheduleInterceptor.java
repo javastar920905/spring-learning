@@ -1,6 +1,9 @@
 package com.ouzhx.aop;
 
+import com.ouzhx.controller.GreetingController;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -24,14 +27,22 @@ public class ScheduleInterceptor {
   @Pointcut("@annotation(org.springframework.scheduling.annotation.Scheduled) && (execution(public * *(..)) || execution(protected * *(..)))")
   public void runPositionSpider() {}
 
-  @Before("runPositionSpider()")
-  public void beforeMethod(JoinPoint joinPoint) {
+  @Around("runPositionSpider()")
+  public void beforeMethod(ProceedingJoinPoint joinPoint) {
+    if (joinPoint.getSignature().getDeclaringType() != GreetingController.class) {
+     /* if (ScheduleConfig.isPositionSpiderRun()) {
+        LOGGER.info("方法 {} 停止执行", joinPoint.getSignature().getName());
+        return;
+      }*/
+    } else {
+      try {
+        // 满足条件类的调度继续执行
+        joinPoint.proceed();
+      } catch (Throwable throwable) {
+        throwable.printStackTrace();
+      }
 
-    LOGGER.info("方法 {} 经过aop拦截", joinPoint.getSignature().getName());
-    /*
-     * if (joinPoint.getSignature().getDeclaringType() != GreetingController.class) {
-     * LOGGER.info("方法 {} 停止执行", joinPoint.getSignature().getName()); return; }
-     */
+    }
   }
 
 }
